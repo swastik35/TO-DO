@@ -35,9 +35,14 @@ public class ListManagement {
     public void EditEvents(){
         int index=0;
         System.out.print("Enter the sl number form the Event List: ");
-        index = sc.nextInt();    //TO-DO need to validate the range whether user input the number between 1- eventList.size()
+        index = sc.nextInt();
         sc.nextLine(); // Consume the newline character
-        System.out.print("Updated Event:");
-        EventList.add(index-1,sc.nextLine());
+        if(index<=EventList.size()){
+            System.out.print("Updated Event:");
+            EventList.add(index-1,sc.nextLine());
+        } else{
+            System.out.println("Please enter a valid sl. number");
+        }
+
     }
 }
